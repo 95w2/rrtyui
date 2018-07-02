@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -22,6 +23,8 @@ class ViewController: UIViewController {
     
     var p1startColor: UIColor!
     var p2startColor: UIColor!
+    
+    var player: AVAudioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,7 @@ class ViewController: UIViewController {
         p1score += 1
         p1button.setTitle(String(p1score), for: .normal)
         sender.backgroundColor = p1button.backgroundColor!.darker(by: CGFloat(30/maxScore))
+        playSound(named: "tap")
         
         if p1score == maxScore {
             p1button.setTitle("WINNER", for: .disabled)
@@ -57,6 +61,7 @@ class ViewController: UIViewController {
         p2score += 1
         p2button.setTitle(String(p2score), for: .normal)
         sender.backgroundColor = p2button.backgroundColor!.darker(by: CGFloat(30/maxScore))
+        playSound(named: "tap")
         
         if p2score == maxScore {
             p2button.setTitle("WINNER", for: .disabled)
@@ -137,6 +142,13 @@ class ViewController: UIViewController {
     func gameFinish() {
         enableMenu()
         disableTaps()
+    }
+    
+    @discardableResult func playSound(named soundName: String) -> AVAudioPlayer {
+        let soundURL = Bundle.main.path(forResource: soundName, ofType: "wav")
+        player = try! AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: soundURL!) as URL, fileTypeHint: AVFileType.wav.rawValue)
+        player.play()
+        return player
     }
 }
 
