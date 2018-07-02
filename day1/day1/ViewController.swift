@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     
     @IBAction func p2buttonTapped(_ sender: UIButton) {
         p2score += 1
-        p2button.setTitle(String(p2score), for:.normal)
+        p2button.setTitle(String(p2score), for: .normal)
         if p2score == 20 {
             p2button.setTitle("WINNER", for: .disabled)
             
@@ -69,17 +69,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        resetButton.isHidden =	 true
+        resetButton.isHidden = true
         resetButton.isEnabled = false
         
         p1score = 0
         p1button.isEnabled = true
-        p1button.setTitle(String(p1score), for:.normal)
+        p1button.setTitle(String(p1score), for: .normal)
+        p1button.setTitle(String(p1score), for: .disabled)
         p1button.backgroundColor = p1color
         
         p2score = 0
         p2button.isEnabled = true
-        p2button.setTitle(String(p2score), for:.normal)
+        p2button.setTitle(String(p2score), for: .normal)
+        p2button.setTitle(String(p2score), for: .disabled)
         p2button.backgroundColor = p2color
     }
     
