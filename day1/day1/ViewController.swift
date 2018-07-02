@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     var p2score = 0
     var maxScore = 20
     
-    var p1color: UIColor!
-    var p2color: UIColor!
+    var p1startColor: UIColor!
+    var p2startColor: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,8 @@ class ViewController: UIViewController {
             maxScore = UserDefaults.standard.integer(forKey: "previousMax")
         }
         
-        p1color = p1button.backgroundColor!
-        p2color = p2button.backgroundColor!
+        p1startColor = p1button.backgroundColor!
+        p2startColor = p2button.backgroundColor!
         
         p2scoreLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         p2button.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
@@ -49,9 +49,7 @@ class ViewController: UIViewController {
         
         if p1score == maxScore {
             p1button.setTitle("WINNER", for: .disabled)
-            
-            disableTaps()
-            enableMenu()
+            gameFinish()
         }
     }
     
@@ -62,9 +60,7 @@ class ViewController: UIViewController {
         
         if p2score == maxScore {
             p2button.setTitle("WINNER", for: .disabled)
-            
-            disableTaps()
-            enableMenu()
+            gameFinish()
         }
     }
     
@@ -82,13 +78,13 @@ class ViewController: UIViewController {
             p1button.isEnabled = true
             p1button.setTitle(String(p1score), for: .normal)
             p1button.setTitle(String(p1score), for: .disabled)
-            p1button.backgroundColor = p1color
+            p1button.backgroundColor = p1startColor
         
             p2score = 0
             p2button.isEnabled = true
             p2button.setTitle(String(p2score), for: .normal)
             p2button.setTitle(String(p2score), for: .disabled)
-            p2button.backgroundColor = p2color
+            p2button.backgroundColor = p2startColor
         }
     }
     
@@ -138,5 +134,9 @@ class ViewController: UIViewController {
         p1button.isEnabled = false
     }
     
+    func gameFinish() {
+        enableMenu()
+        disableTaps()
+    }
 }
 
