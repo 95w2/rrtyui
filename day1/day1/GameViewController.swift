@@ -40,7 +40,7 @@ class GameViewController: UIViewController {
     }
     var p2score = 0 {
         didSet {
-            p2button.setTitle(String(p1score), for: .normal)
+            p2button.setTitle(String(p2score), for: .normal)
             p2button.backgroundColor = p2startColor!.darker(by: CGFloat(30/gameState.maxScore*p2score))
             if p2score == gameState.maxScore {
                 p2button.setTitle("WINNER", for: .disabled)
@@ -102,7 +102,7 @@ class GameViewController: UIViewController {
         SwiftSpinner.show("3")
         SwiftSpinner.show(delay: 1.0, title: "2")
         SwiftSpinner.show(delay: 2.0, title: "1")
-        SwiftSpinner.show(delay: 3, title: "GO")
+        SwiftSpinner.show(delay: 3.0, title: "GO")
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.3) {
             SwiftSpinner.hide()
             self.p1button.isEnabled = true
