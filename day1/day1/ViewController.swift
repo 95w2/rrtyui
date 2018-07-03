@@ -71,7 +71,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        
         if firstGameStart == true {
             guard let soundPath = Bundle.main.path(forResource: "tap", ofType: "wav") else {
                 return
@@ -81,8 +80,8 @@ class ViewController: UIViewController {
             
             resetButton.setTitle("RESET", for: .normal)
             firstGameStart = false
-            
         }
+        player.prepareToPlay()
         
         resetButton.isHidden = true
         resetButton.isEnabled = false
@@ -111,10 +110,9 @@ class ViewController: UIViewController {
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             SwiftSpinner.hide()
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.p1button.isEnabled = true
             self.p2button.isEnabled = true
+
         }
     }
     
