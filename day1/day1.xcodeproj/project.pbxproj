@@ -10,7 +10,7 @@
 		8858718620EB573F001886F4 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858718520EB573F001886F4 /* GameState.swift */; };
 		8858718820EB591B001886F4 /* UIAlertController+settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8858718720EB591B001886F4 /* UIAlertController+settings.swift */; };
 		885C835320E9CF22004FEAD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C835220E9CF22004FEAD9 /* AppDelegate.swift */; };
-		885C835520E9CF22004FEAD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C835420E9CF22004FEAD9 /* ViewController.swift */; };
+		885C835520E9CF22004FEAD9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C835420E9CF22004FEAD9 /* GameViewController.swift */; };
 		885C835A20E9CF22004FEAD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885C835920E9CF22004FEAD9 /* Assets.xcassets */; };
 		885C835D20E9CF22004FEAD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885C835B20E9CF22004FEAD9 /* LaunchScreen.storyboard */; };
 		885C836720E9E589004FEAD9 /* UIColor+darker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C836620E9E589004FEAD9 /* UIColor+darker.swift */; };
@@ -28,7 +28,7 @@
 		8858718720EB591B001886F4 /* UIAlertController+settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+settings.swift"; sourceTree = "<group>"; };
 		885C834F20E9CF22004FEAD9 /* day1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = day1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		885C835220E9CF22004FEAD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		885C835420E9CF22004FEAD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		885C835420E9CF22004FEAD9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		885C835920E9CF22004FEAD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		885C835C20E9CF22004FEAD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		885C835E20E9CF22004FEAD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				885C835220E9CF22004FEAD9 /* AppDelegate.swift */,
-				885C835420E9CF22004FEAD9 /* ViewController.swift */,
+				885C835420E9CF22004FEAD9 /* GameViewController.swift */,
 				8858718520EB573F001886F4 /* GameState.swift */,
 				885C836620E9E589004FEAD9 /* UIColor+darker.swift */,
 				8858718720EB591B001886F4 /* UIAlertController+settings.swift */,
@@ -234,7 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				885C835520E9CF22004FEAD9 /* ViewController.swift in Sources */,
+				885C835520E9CF22004FEAD9 /* GameViewController.swift in Sources */,
 				8858718820EB591B001886F4 /* UIAlertController+settings.swift in Sources */,
 				8858718620EB573F001886F4 /* GameState.swift in Sources */,
 				885C835320E9CF22004FEAD9 /* AppDelegate.swift in Sources */,

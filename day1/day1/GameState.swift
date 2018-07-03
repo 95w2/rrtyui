@@ -6,15 +6,43 @@
 //  Copyright © 2018 Fake Name. All rights reserved.
 //
 
+import UIKit
+
 class GameState {
 
-    static var maxScore = 20
-    static var firstGame = true
+     var maxScore = 20
+     var firstGame = true
 
-    static func newMax(n: Int) {
+     func newMax(n: Int) {
         maxScore = n
     }
-    static func firstGameStart() {
+    
+    func firstGameStart() {
         firstGame = false
     }
+    
+    func finish(p1: UIButton, p2: UIButton, rs: UIButton, st: UIButton) {
+        enableMenu(rs: rs, st: st)
+        disableTaps(p1: p1, p2: p2)
+    }
+    
+    func disableTaps(p1: UIButton, p2: UIButton) {
+        p1.isEnabled = false
+        p2.isEnabled = false
+    }
+    
+    func enableMenu(rs: UIButton, st: UIButton) {
+        rs.isHidden = false
+        rs.isEnabled = true
+        st.isHidden = false
+        st.isEnabled = true
+    }
+    
+    func disableMenu(rs: UIButton, st: UIButton) {
+        rs.isHidden = true
+        rs.isEnabled = false
+        st.isHidden = true
+        st.isEnabled = false
+    }
+    
 }

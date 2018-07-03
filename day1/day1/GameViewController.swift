@@ -10,7 +10,9 @@ import UIKit
 import AVFoundation
 import SwiftSpinner
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
+    
+    let gameState = GameState()
     
     @IBOutlet weak var p1button: UIButton!
     @IBOutlet weak var p2button: UIButton!
@@ -18,24 +20,41 @@ class ViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     
-    var p1score = 0
-    var p2score = 0
-    
     var p1startColor: UIColor!
     var p2startColor: UIColor!
     
-    let maxDefaults = "previousMax"
-    
+    static let maxDefaults = "previousMax"
     lazy var player: AVAudioPlayer = {
         return AVAudioPlayer()
     }()
+    
+    var p1score = 0 {
+        didSet {
+            p1button.setTitle(String(p1score), for: .normal)
+            p1button.backgroundColor = p1startColor!.darker(by: CGFloat(30/gameState.maxScore*p1score))
+            if p1score == gameState.maxScore {
+                p1button.setTitle("WINNER", for: .disabled)
+                gameState.finish(p1: p1button, p2: p2button, rs: resetButton, st: settingsButton)
+            }
+        }
+    }
+    var p2score = 0 {
+        didSet {
+            p2button.setTitle(String(p1score), for: .normal)
+            p2button.backgroundColor = p2startColor!.darker(by: CGFloat(30/gameState.maxScore*p2score))
+            if p2score == gameState.maxScore {
+                p2button.setTitle("WINNER", for: .disabled)
+                gameState.finish(p1: p1button, p2: p2button, rs: resetButton, st: settingsButton)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 50.0))
-        if UserDefaults.standard.object(forKey: maxDefaults) != nil {
-            GameState.maxScore = UserDefaults.standard.integer(forKey: maxDefaults)
+        if UserDefaults.standard.object(forKey: GameViewController.maxDefaults) != nil {
+            gameState.maxScore = UserDefaults.standard.integer(forKey: GameViewController.maxDefaults)
         }
         p1startColor = p1button.backgroundColor!
         p2startColor = p2button.backgroundColor!
@@ -46,30 +65,16 @@ class ViewController: UIViewController {
     
     @IBAction func p1buttonTapped(_ sender: UIButton) {
         p1score += 1
-        p1button.setTitle(String(p1score), for: .normal)
-        darkenColor(button: p1button)
         player.play()
-        
-        if p1score == GameState.maxScore {
-            p1button.setTitle("WINNER", for: .disabled)
-            gameFinish()
-        }
     }
     
     @IBAction func p2buttonTapped(_ sender: UIButton) {
         p2score += 1
-        p2button.setTitle(String(p2score), for: .normal)
-        darkenColor(button: p2button)
         player.play()
-        
-        if p2score == GameState.maxScore {
-            p2button.setTitle("WINNER", for: .disabled)
-            gameFinish()
-        }
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        if GameState.firstGame {
+        if gameState.firstGame {
             guard let soundPath = Bundle.main.path(forResource: "tap", ofType: "wav") else {
                 return
             }
@@ -77,59 +82,22 @@ class ViewController: UIViewController {
             player = try! AVAudioPlayer(contentsOf: soundURL, fileTypeHint: AVFileType.wav.rawValue)
             
             resetButton.setTitle("RESET", for: .normal)
-            GameState.firstGameStart()
+            gameState.firstGameStart()
         }
         player.prepareToPlay()
-        disableMenu()
+        gameState.disableMenu(rs: resetButton, st: settingsButton)
         
         p1score = 0
         p2score = 0
-        resetScore(button: p1button)
-        resetScore(button: p2button)
-        p1button.backgroundColor = p1startColor
-        p2button.backgroundColor = p2startColor
         
         countdown()
     }
     
     @IBAction func settingsButtonTapped(_ sender: UIButton) {
         let ac = UIAlertController(title: "SETTINGS", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-        ac.presentSettings(string: maxDefaults, settings: ac, vc: self)
+        ac.presentSettings(string: GameViewController.maxDefaults, settings: ac, vc: self, gameState: gameState)
     }
-    
-    func enableMenu() {
-        resetButton.isHidden = false
-        resetButton.isEnabled = true
-        settingsButton.isHidden = false
-        settingsButton.isEnabled = true
-    }
-    
-    func disableMenu() {
-        resetButton.isHidden = true
-        resetButton.isEnabled = false
-        settingsButton.isHidden = true
-        settingsButton.isEnabled = false
-    }
-
-    func disableTaps() {
-        p2button.isEnabled = false
-        p1button.isEnabled = false
-    }
-    
-    func gameFinish() {
-        enableMenu()
-        disableTaps()
-    }
-    
-    func resetScore(button: UIButton) {
-        button.setTitle(String(0), for: .normal)
-        button.setTitle(String(0), for: .disabled)
-    }
-    
-    func darkenColor(button: UIButton) {
-        button.backgroundColor = button.backgroundColor!.darker(by: CGFloat(30/GameState.maxScore))
-    }
-    
+        
     func countdown() {
         SwiftSpinner.show("3")
         SwiftSpinner.show(delay: 1.0, title: "2")

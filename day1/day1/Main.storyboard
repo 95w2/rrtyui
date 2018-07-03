@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -19,16 +15,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="day1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="day1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnL-Rc-eAa">
-                                <rect key="frame" x="0.0" y="343.5" width="375" height="323"/>
+                                <rect key="frame" x="0.0" y="310" width="600" height="290"/>
                                 <color key="backgroundColor" red="0.13497473460000001" green="0.6391921639" blue="0.61405197720000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="70"/>
                                 <state key="normal" title="0">
@@ -39,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HB-ng-FEl">
-                                <rect key="frame" x="0.0" y="20" width="375" height="323.5"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="290"/>
                                 <color key="backgroundColor" name="tcSeafoamGreen"/>
                                 <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="70"/>
                                 <state key="normal" title="0">
@@ -50,7 +46,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8D-Pg-4sX">
-                                <rect key="frame" x="0.0" y="597" width="100" height="70"/>
+                                <rect key="frame" x="0.0" y="530" width="100" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="QLL-bI-6oI"/>
                                     <constraint firstAttribute="width" constant="100" id="uZU-dk-QYd"/>
@@ -60,7 +56,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNm-2h-imL">
-                                <rect key="frame" x="275" y="20" width="100" height="70"/>
+                                <rect key="frame" x="500" y="20" width="100" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="u3x-vL-MZ8"/>
                                     <constraint firstAttribute="width" constant="100" id="ucS-wg-a18"/>
@@ -70,7 +66,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5c8-0A-wMH">
-                                <rect key="frame" x="87" y="283.5" width="200" height="120"/>
+                                <rect key="frame" x="200" y="250" width="200" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsO-0x-Rv3">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
