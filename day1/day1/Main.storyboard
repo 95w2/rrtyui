@@ -105,7 +105,6 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZSv-iV-p4m"/>
                                             <action selector="settingsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QvV-gL-vS1"/>
                                         </connections>
                                     </button>
