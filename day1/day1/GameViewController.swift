@@ -31,7 +31,7 @@ class GameViewController: UIViewController {
     var p1score = 0 {
         didSet {
             p1button.setTitle(String(p1score), for: .normal)
-            p1button.backgroundColor = p1startColor!.darker(by: CGFloat(30/gameState.maxScore*p1score))
+            p1button.backgroundColor = p1startColor!.darker(by: CGFloat(40/gameState.maxScore*p1score))
             if p1score == gameState.maxScore {
                 p1button.setTitle("WINNER", for: .disabled)
                 gameState.finish(p1: p1button, p2: p2button, rs: resetButton, st: settingsButton)
@@ -41,7 +41,7 @@ class GameViewController: UIViewController {
     var p2score = 0 {
         didSet {
             p2button.setTitle(String(p2score), for: .normal)
-            p2button.backgroundColor = p2startColor!.darker(by: CGFloat(30/gameState.maxScore*p2score))
+            p2button.backgroundColor = p2startColor!.darker(by: CGFloat(40/gameState.maxScore*p2score))
             if p2score == gameState.maxScore {
                 p2button.setTitle("WINNER", for: .disabled)
                 gameState.finish(p1: p1button, p2: p2button, rs: resetButton, st: settingsButton)
