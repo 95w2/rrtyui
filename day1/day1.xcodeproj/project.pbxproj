@@ -14,6 +14,7 @@
 		885C836720E9E589004FEAD9 /* UIColor+darker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C836620E9E589004FEAD9 /* UIColor+darker.swift */; };
 		885C836920EA05F2004FEAD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885C836820EA05F2004FEAD9 /* Main.storyboard */; };
 		885C836B20EA194B004FEAD9 /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 885C836A20EA194B004FEAD9 /* tap.wav */; };
+		886E323E20EB30BF000C3271 /* nextround.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 886E323D20EB30BF000C3271 /* nextround.mp3 */; };
 		C6B7C78CF5A3AE701CC2F617 /* Pods_day1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3CF26DACC549768C8D03DD /* Pods_day1.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		885C836620E9E589004FEAD9 /* UIColor+darker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+darker.swift"; sourceTree = "<group>"; };
 		885C836820EA05F2004FEAD9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		885C836A20EA194B004FEAD9 /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
+		886E323D20EB30BF000C3271 /* nextround.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nextround.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				885C835B20E9CF22004FEAD9 /* LaunchScreen.storyboard */,
 				885C835E20E9CF22004FEAD9 /* Info.plist */,
 				885C836A20EA194B004FEAD9 /* tap.wav */,
+				886E323D20EB30BF000C3271 /* nextround.mp3 */,
 			);
 			path = day1;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				885C836920EA05F2004FEAD9 /* Main.storyboard in Resources */,
 				885C835D20E9CF22004FEAD9 /* LaunchScreen.storyboard in Resources */,
 				885C835A20E9CF22004FEAD9 /* Assets.xcassets in Resources */,
+				886E323E20EB30BF000C3271 /* nextround.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

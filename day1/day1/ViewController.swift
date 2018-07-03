@@ -150,9 +150,15 @@ class ViewController: UIViewController {
     func createGamemodes() {
         let gamemodes = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.alert)
         
-        gamemodes.addAction(UIAlertAction(title: "MAX SCORE: 20", style: .default, handler: { (alert: UIAlertAction!) in self.maxScore = 20 }))
-        gamemodes.addAction(UIAlertAction(title: "MAX SCORE: 30", style: .default, handler: { (alert: UIAlertAction!) in self.maxScore = 30 }))
-        gamemodes.addAction(UIAlertAction(title: "MAX SCORE: 50", style: .default, handler: { (alert: UIAlertAction!) in self.maxScore = 50 }))
+        gamemodes.addAction(UIAlertAction(title: "MAX SCORE: 20", style: .default, handler: { (alert: UIAlertAction!) in self.maxScore = 20
+            UserDefaults.standard.set(self.maxScore, forKey: self.maxDefaults)
+        }))
+        gamemodes.addAction(UIAlertAction(title: "MAX SCORE: 30", style: .default, handler: { (alert: UIAlertAction!) in self.maxScore = 30
+            UserDefaults.standard.set(self.maxScore, forKey: self.maxDefaults)
+        }))
+        gamemodes.addAction(UIAlertAction(title: "MAX SCORE: 50", style: .default, handler: { (alert: UIAlertAction!) in self.maxScore = 50
+            UserDefaults.standard.set(self.maxScore, forKey: self.maxDefaults)
+        }))
         gamemodes.addAction(UIAlertAction(title: "CUSTOM", style: .default, handler: { (alert: UIAlertAction!) in self.createCustomMax() }))
         gamemodes.addAction(UIAlertAction(title: "< BACK", style: .default, handler: nil))
         self.present(gamemodes, animated: true, completion: nil)
